@@ -1,0 +1,246 @@
+@font-face {
+  font-family: 'WeblySleek UI';
+  font-weight: 100;
+  font-style: normal;
+  src: url(/fonts/ws-ui-light.woff) format("woff"); }
+
+@font-face {
+  font-family: 'WeblySleek UI';
+  font-weight: 400;
+  font-style: normal;
+  src: url(/fonts/ws-ui.woff) format("woff"); }
+
+@font-face {
+  font-family: 'WeblySleek UI';
+  font-weight: 600;
+  font-style: normal;
+  src: url(/fonts/ws-ui-semibold.woff) format("woff"); }
+
+body {
+  font-family: "WeblySleek UI", "Segoe UI", "Helvetica Neue", sans-serif;
+  font-weight: 400;
+  margin: 0 auto; }
+
+h1, h2, h3, h4, h5 {
+  page-break-after: avoid; }
+
+h1 {
+  font-size: 36pt;
+  margin: 0; }
+
+h2 {
+  margin: 0; }
+
+@page {
+  size: US-Letter;
+  margin: 0.5in; }
+
+@media screen {
+  .page {
+    margin: 15px; }
+  .fair-header,
+  .fair-footer {
+    display: none; } }
+
+@media screen and (min-width: 960px) {
+  body {
+    width: 960px; } }
+
+@media screen and (max-width: 480px) {
+  h1 {
+    font-size: 20pt; } }
+
+@media print {
+  body {
+    font-size: 11pt; }
+  .fair-header,
+  .fair-footer {
+    position: fixed; }
+  .fair-footer {
+    bottom: 0;
+    content: counter(page); } }
+
+.fair-submission {
+  background-color: white;
+  border-bottom: 1pt solid black;
+  padding: 12pt 0;
+  page-break-inside: avoid; }
+
+.fair-submission-sidebyside {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; }
+
+.fair-submission-info-class {
+  color: rgba(0, 0, 0, 0.5); }
+
+.fair-submission-info-project {
+  font-size: 16pt; }
+
+.fair-submission-info .project-name {
+  font-size: 16pt;
+  font-weight: 600;
+  margin-right: 2pt; }
+
+.fair-submission-info-members {
+  margin-top: 12pt;
+  color: rgba(0, 0, 0, 0.5); }
+
+.fair-submission-right {
+  margin-left: 18pt; }
+
+.fair-submission-logo {
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+  @media print {
+    .fair-submission-logo {
+      width: 1in;
+      height: 1in; } }
+  .fair-submission-logo-image {
+    width: 100px;
+    max-height: 100px; }
+    @media print {
+      .fair-submission-logo-image {
+        width: 1in;
+        max-height: 1in; } }
+
+@media print {
+  .fair-submission-deepdive {
+    display: none; } }
+
+.fair-submission-deepdive {
+  margin-top: 12pt; }
+  .fair-submission-deepdive label {
+    color: #08f; }
+  .fair-submission-deepdive p {
+    margin: 15px -15px;
+    padding: 15px;
+    background-color: #eee; }
+
+.fair-submission-deepdive > .collapsible-checkbox ~ .collapsible-label:before {
+  content: "Show deep dive"; }
+
+.fair-submission-deepdive > .collapsible-checkbox:checked ~ .collapsible-label:before {
+  content: "Hide deep dive"; }
+
+.fair-submission-deepdive > .collapsible-checkbox ~ p {
+  display: none;
+  /* prevents sublists below unchecked labels from displaying */ }
+
+.fair-submission-deepdive > .collapsible-checkbox:checked ~ p {
+  display: block;
+  /* display submenu on click */ }
+
+.fair-cover {
+  page-break-after: always;
+  margin-bottom: 15px; }
+  @media print {
+    .fair-cover {
+      margin: 0; } }
+
+.fair-cover-banner,
+.fair-cover-page {
+  width: 100%; }
+  @media print {
+    .fair-cover-banner,
+    .fair-cover-page {
+      margin-bottom: 1in; } }
+
+@media print {
+  .fair-cover-banner-image {
+    width: 75%; } }
+
+.fair-cover-page-image {
+  display: none; }
+  @media print {
+    .fair-cover-page-image {
+      display: block;
+      width: 75%; } }
+
+.fair-cover-mobile {
+  display: none; }
+  @media print {
+    .fair-cover-mobile {
+      display: block; }
+      .fair-cover-mobile a {
+        display: block;
+        font-size: 24pt; } }
+
+.fair-section {
+  page-break-after: always;
+  border-bottom: 2pt solid black;
+  padding-bottom: 12pt; }
+
+.fair-section h2 {
+  display: none; }
+  @media print {
+    .fair-section h2 {
+      display: block; } }
+
+.fair-section-footer {
+  margin-top: 12pt;
+  font-size: 12pt;
+  color: rgba(0, 0, 0, 0.5);
+  display: none; }
+  .fair-section-footer strong {
+    font-weight: 600; }
+  @media print {
+    .fair-section-footer {
+      display: block; } }
+
+/* Minimal css for clickable pure CSS collapsible tree menu */
+/* As specific as possible to prevent interference with other code */
+.collapsible-checkbox {
+  opacity: 0;
+  display: none;
+  /* checkboxes invisible and use no space */ }
+
+/* display: none; is better but fails in ie8 */
+.collapsible-label {
+  cursor: pointer; }
+
+.fair-section > .collapsible-label:after {
+  float: right;
+  position: relative;
+  top: -2em;
+  color: #08f; }
+  @media print {
+    .fair-section > .collapsible-label:after {
+      display: none; } }
+
+.fair-section > .collapsible-checkbox:checked ~ .collapsible-label:after {
+  content: "hide"; }
+
+.fair-section > .collapsible-checkbox ~ .collapsible-label:after {
+  content: "show"; }
+
+.fair-section > .collapsible-checkbox ~ .fair-section-submissions > div {
+  display: none;
+  /* prevents sublists below unchecked labels from displaying */ }
+  @media print {
+    .fair-section > .collapsible-checkbox ~ .fair-section-submissions > div {
+      display: block; } }
+
+.fair-section > .collapsible-checkbox:checked ~ .fair-section-submissions > div {
+  display: block;
+  /* display submenu on click */ }
+
+.fair-map {
+  page-break-after: always; }
+
+svg {
+  font-size: 11px; }
+
+svg .area-text-container {
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+
+svg .area-text {
+  text-align: center; }
+
+svg .stairs {
+  fill: rgba(0, 0, 0, 0.2); }
