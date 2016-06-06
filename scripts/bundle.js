@@ -588,19 +588,19 @@
 /* 7 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__.p + "/data/submissions.json";
+	module.exports = __webpack_require__.p + "data/submissions.json";
 
 /***/ },
 /* 8 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__.p + "/data/floorplan.svg";
+	module.exports = __webpack_require__.p + "data/floorplan.svg";
 
 /***/ },
 /* 9 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__.p + "/data/placement.json";
+	module.exports = __webpack_require__.p + "data/placement.json";
 
 /***/ },
 /* 10 */
