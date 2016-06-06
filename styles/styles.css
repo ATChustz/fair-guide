@@ -58,7 +58,11 @@ h2 {
     position: fixed; }
   .fair-footer {
     bottom: 0;
-    content: counter(page); } }
+    content: counter(page); }
+  a {
+    color: rgba(0, 0, 0, 0.8); }
+    a:after {
+      content: " (" attr(href) ")"; } }
 
 .fair-submission {
   background-color: white;
@@ -164,10 +168,17 @@ h2 {
   display: none; }
   @media print {
     .fair-cover-mobile {
+      margin-bottom: 1in;
       display: block; }
-      .fair-cover-mobile a {
+      .fair-cover-mobile span {
         display: block;
         font-size: 24pt; } }
+
+.fair-acknowledgements {
+  font-size: 8pt; }
+  @media print {
+    .fair-acknowledgements {
+      font-size: 11pt; } }
 
 .fair-section {
   page-break-after: always;
@@ -228,8 +239,15 @@ h2 {
   display: block;
   /* display submenu on click */ }
 
+.fair-guide {
+  padding-bottom: 60px; }
+  @media print {
+    .fair-guide {
+      padding-bottom: 0; } }
+
 .fair-map {
-  page-break-after: always; }
+  page-break-after: always;
+  border-top: 2pt solid black; }
 
 svg {
   font-size: 11px; }
