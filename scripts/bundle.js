@@ -73,8 +73,9 @@
 
 	        var content = document.querySelector('.fair-guide');
 	        _.forIn(placements, function (placementData, placementKey) {
+	            var name = placementData.name;
 	            var sectionData = {
-	                name: placementData.name,
+	                name: name,
 	                submissions: groups[placementKey].map(function (submission, index) {
 	                    return Object.assign({}, submission, { id: name + '-' + index });
 	                })
