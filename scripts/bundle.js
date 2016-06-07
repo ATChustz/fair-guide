@@ -66,14 +66,16 @@
 	    data.then(function (response) {
 	        return response.json();
 	    }).then(function (json) {
-	        var submissions = json.submissions;
+	        var submissions = _.sortBy(json.submissions, function (submission) {
+	            return submission.project_name;
+	        });
 	        var groups = _.groupBy(submissions, 'placement');
 
 	        var content = document.querySelector('.fair-guide');
-	        _.forIn(groups, function (group, name) {
+	        _.forIn(placements, function (placementData, placementKey) {
 	            var sectionData = {
-	                name: placements[name].name,
-	                submissions: group.map(function (submission, index) {
+	                name: placementData.name,
+	                submissions: groups[placementKey].map(function (submission, index) {
 	                    return Object.assign({}, submission, { id: name + '-' + index });
 	                })
 	            };
